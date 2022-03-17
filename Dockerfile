@@ -1,4 +1,4 @@
-FROM alpine:3.12 as builder
+FROM alpine:3.13.7 as builder
 
 ARG ZEEK_VERSION=4.2.0
 ARG AF_PACKET_VERSION=3.0.2
@@ -57,7 +57,7 @@ RUN echo "===> Size of the Zeek install..." \
     && du -sh /usr/local/zeek
 
 ####################################################################################################
-FROM alpine:3.12
+FROM alpine:3.13.7
 
 # python3 & bash are needed for zeekctl scripts
 # ethtool is needed to manage interface features
